@@ -1,0 +1,78 @@
+@import 'variables';
+
+/* ------------------------------
+	Reset
+------------------------------ */
+* {
+	border: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	text-decoration: none;
+}
+:focus {
+	outline: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ------------------------------
+	Selection
+------------------------------ */
+*::selection {
+	background: $base;
+	color: #fff;
+}
+*::-moz-selection {
+	background: $base;
+	color: #fff;
+}
+*::-webkit-selection {
+	background: $base;
+	color: #fff;
+}
+
+/* ------------------------------
+	Fonts
+------------------------------ */
+@font-face {
+	font-family: 'Roboto';
+	font-display: swap;
+	src: local('Roboto'), url('/assets/fonts/roboto/Roboto-Light.woff2') format('woff2'),
+		url('/assets/fonts/roboto/Roboto-Light.woff') format('woff');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-display: swap;
+	src: local('Roboto'), url('/assets/fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+		url('/assets/fonts/roboto/Roboto-Regular.woff') format('woff');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-display: swap;
+	src: local('Roboto'), url('/assets/fonts/roboto/Roboto-Bold.woff2') format('woff2'),
+		url('/assets/fonts/roboto/Roboto-Bold.woff') format('woff');
+	font-style: bold;
+	font-weight: 700;
+}
+
+/* ------------------------------
+	Content
+------------------------------ */
+html {
+	overflow-x: hidden;
+}
+
+body {
+	color: $base;
+	font: normal 14px/18px 'Roboto', Arial;
+	text-rendering: optimizeSpeed;
+}
