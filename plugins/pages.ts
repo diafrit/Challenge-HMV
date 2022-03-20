@@ -21,23 +21,22 @@ const commonHead = {
 	],
 
 	link: [
-		{ rel: 'apple-touch-icon', href: '~/assets/img/favicon/apple-touch-icon.png', sizes: '180x180' },
-		{ rel: 'icon', href: '~/assets/img/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-		{ rel: 'icon', href: '~/assets/img/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-		{ rel: 'manifest', href: '~/assets/img/favicon/site.webmanifest' },
-		{ rel: 'mask-icon', href: '~/assets/img/favicon/safari-pinned-tab.svg', color: '#212121' },
+		{ rel: 'apple-touch-icon', href: '/favicon/apple-touch-icon.png', sizes: '180x180' },
+		{ rel: 'icon', href: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+		{ rel: 'icon', href: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+		{ rel: 'manifest', href: '/favicon/site.webmanifest' },
 	],
 }
 
 @Component
 export class Page extends Vue {
 	layout() {
-		return 'userTheme'
+		return 'customLayout'
 	}
 
 	head() {
 		return {
-			titleTemplate: '%s Hospital Moinhos de Vento - FIAP @ Challenge Grupo 3',
+			titleTemplate: '%s Hospital Moinhos de Vento',
 
 			meta: commonHead.meta,
 			link: commonHead.link,

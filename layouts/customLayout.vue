@@ -1,9 +1,12 @@
 <template>
 	<div>
-		<outdated-browser />
+		<custom-header />
 
-		<p>site header</p>
-		<nuxt />
+		<main>
+			<nuxt />
+		</main>
+
+		<custom-footer />
 	</div>
 </template>
 
