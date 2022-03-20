@@ -1,7 +1,7 @@
 @import 'variables';
 
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 // Reset
 * {
@@ -42,26 +42,24 @@ html {
 body {
 	background-color: $bg;
 	color: $default;
-	font: 300 14px/18px 'Raleway', Arial;
+	font: 400 16px/25px 'Montserrat', sans-serif;
 	min-width: 320px;
+	overflow: hidden;
 	text-rendering: optimizeSpeed;
 }
 
 // Content
+
+section {
+	display: inline-block;
+	width: 100%;
+}
+
 .container {
 	box-sizing: border-box;
 	margin: 0 auto;
 	max-width: 1200px;
 	padding: 0 15px;
+	position: relative;
 	width: 100%;
-}
-
-// Links
-.link {
-	color: $brand;
-	transition: color 0.2s ease;
-
-	&:hover {
-		color: $brand-light;
-	}
 }

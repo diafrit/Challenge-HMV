@@ -1,19 +1,10 @@
 <template>
-	<h1>{{ test }}</h1>
+	<p>login</p>
 </template>
 
 <script lang="ts">
-import { Component } from 'nuxt-property-decorator'
-import { Page } from '~/plugins/pages'
+import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component
-export default class Home extends Page {
-	test: string = 'site content'
-}
+export default class login extends Vue {}
 </script>
-
-<style scoped lang="scss">
-h1 {
-	color: grey;
-}
-</style>

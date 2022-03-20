@@ -1,20 +1,16 @@
 <template>
 	<header class="header">
 		<div class="container">
-			<nuxt-link class="header-logo" to="/" title="Hospital Moinhos de Vento">
-				<img src="~/assets/img/logo-hmv.png" alt="Hospital Moinhos de Vento" />
-			</nuxt-link>
-
 			<nav>
 				<ul>
 					<li>
-						<nuxt-link class="link" to="/" title="Exames">Exames</nuxt-link>
+						<nuxt-link to="/" title="Emergência">Emergência</nuxt-link>
 					</li>
 					<li>
-						<nuxt-link class="link" to="/" title="Emergências">Emergências</nuxt-link>
+						<nuxt-link to="/" title="O Hospital">O Hospital</nuxt-link>
 					</li>
 					<li>
-						<nuxt-link class="link" to="/" title="Contato">Contato</nuxt-link>
+						<nuxt-link to="/" title="Contato">Contato</nuxt-link>
 					</li>
 				</ul>
 			</nav>
@@ -55,22 +51,20 @@ export default class customHeader extends Vue {}
 	nav {
 		display: inline-block;
 		position: relative;
-		top: -19px;
+		top: 11px;
 
 		ul {
 			li {
 				display: inline-block;
-				margin-left: 25px;
+
+				&:not(:last-child) {
+					margin-right: 25px;
+				}
 
 				a {
 					color: $default;
-					font-size: 17px;
-					font-weight: 600;
+					font-size: 1.1rem;
 					transition: color 0.2s ease;
-
-					&:hover {
-						color: $brand;
-					}
 				}
 			}
 		}
@@ -86,11 +80,13 @@ export default class customHeader extends Vue {}
 			small {
 				color: $gray;
 				display: block;
+				position: relative;
+				top: -11px;
 			}
 		}
 
 		img {
-			border: 2px $brand solid;
+			border: 2px $default solid;
 			border-radius: 100%;
 			height: 42px;
 			padding: 2px;
@@ -111,10 +107,10 @@ export default class customHeader extends Vue {}
 
 			ul {
 				li {
-					margin-left: 10px;
+					margin-left: 7px;
 
 					a {
-						font-size: 13px;
+						font-size: 0.8rem;
 					}
 				}
 			}
