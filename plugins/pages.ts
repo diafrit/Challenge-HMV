@@ -29,11 +29,7 @@ const commonHead = {
 }
 
 @Component
-export class Page extends Vue {
-	layout() {
-		return 'customLayout'
-	}
-
+export class Base extends Vue {
 	head() {
 		return {
 			titleTemplate: '%s Hospital Moinhos de Vento',
@@ -41,5 +37,12 @@ export class Page extends Vue {
 			meta: commonHead.meta,
 			link: commonHead.link,
 		}
+	}
+}
+
+@Component
+export class Page extends Base {
+	layout() {
+		return 'customLayout'
 	}
 }
