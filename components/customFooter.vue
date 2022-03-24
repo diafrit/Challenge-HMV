@@ -16,7 +16,6 @@
 footer {
 	background-color: $bg-dark;
 	display: inline-block;
-	margin-top: 120px;
 	overflow: hidden;
 	padding: 30px 0;
 	position: relative;

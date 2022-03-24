@@ -4,13 +4,13 @@
 			<nav>
 				<ul>
 					<li>
-						<nuxt-link to="/" title="Emergência">Emergência</nuxt-link>
+						<nuxt-link to="/usuario" title="Home">Home</nuxt-link>
 					</li>
 					<li>
-						<nuxt-link to="/" title="O Hospital">O Hospital</nuxt-link>
+						<nuxt-link to="/usuario/dados" title="Cadastro">Cadastro</nuxt-link>
 					</li>
 					<li>
-						<nuxt-link to="/" title="Contato">Contato</nuxt-link>
+						<nuxt-link to="/usuario/emergencia" title="Emergência">Emergência</nuxt-link>
 					</li>
 				</ul>
 			</nav>

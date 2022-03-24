@@ -3,22 +3,35 @@
 		<section class="hero-banner">
 			<div class="container">
 				<div>
-					<h1>Adipisicing <span>emergência</span> und libero deleniti</h1>
+					<h1 class="title">Adipisicing <span>emergência</span> und libero deleniti</h1>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nobis enim magni laudantium libero deleniti
 						temporibus minus iste molestias. Quisquam?
 					</p>
 					<p>Quod incidunt veniam ex quibusdam!</p>
 				</div>
-				<img src="~/assets/img/hero-illustration.png" alt="Hospital Moinhos de Vento" />
+				<img src="~/assets/img/emergency-illustration.png" alt="Hospital Moinhos de Vento" />
 			</div>
 		</section>
 
 		<section class="action">
 			<div>
-				<nuxt-link to="/" title="Clique aqui para solicitar atendimento">
-					<img src="~/assets/img/action-illustration.png" alt="Chamada de emergência" />Chamada de emergência
-				</nuxt-link>
+				<nuxt-link to="/" title="Solicitar atendimento">Chamada de emergência</nuxt-link>
+			</div>
+		</section>
+
+		<section class="registration">
+			<div class="container">
+				<h3>Mantenha seus dados atualizados</h3>
+				<nuxt-link to="/usuario/dados" title="Atualizar dados">Atualizar</nuxt-link>
+				<p>
+					Lorem ipsum dolor {{ percentage }}% sit amet consectetur adipisicing elit. Placeat, enim est vitae quisquam
+					illo.
+				</p>
+
+				<div class="bar">
+					<span :style="{ width: percentage + '%' }" />
+				</div>
 			</div>
 		</section>
 	</div>
@@ -30,7 +43,7 @@ import { Page } from '~/plugins/pages'
 
 @Component
 export default class userHome extends Page {
-	test: string = 'site content'
+	percentage: number = 70
 }
 </script>
 
@@ -59,17 +72,6 @@ export default class userHome extends Page {
 			width: 50%;
 			z-index: 1;
 
-			h1 {
-				color: $title;
-				font-size: 3rem;
-				line-height: 1.3;
-				margin-bottom: 15px;
-
-				span {
-					color: $emergency;
-				}
-			}
-
 			p {
 				margin-top: 15px;
 			}
@@ -77,10 +79,10 @@ export default class userHome extends Page {
 
 		img {
 			float: right;
-			margin: 4% 4% 0 0;
+			margin: 4% 12% 0 0;
 			max-width: 610px;
 			position: relative;
-			width: 46%;
+			width: 23%;
 			z-index: 1;
 		}
 
@@ -96,7 +98,8 @@ export default class userHome extends Page {
 			img {
 				display: block;
 				float: none;
-				margin: 0 auto;
+				margin: 0 auto 60px;
+				width: 40%;
 			}
 		}
 	}
@@ -130,23 +133,64 @@ export default class userHome extends Page {
 			@media (max-width: 620px) {
 				font-size: 1.5rem;
 			}
-
-			&:hover {
-				animation: none;
-			}
-
-			img {
-				opacity: 0.2;
-				position: absolute;
-				right: -12%;
-				top: -10%;
-			}
 		}
 	}
 
 	@keyframes pulse {
 		to {
 			box-shadow: 0 0 0 45px rgba(226, 0, 27, 0);
+		}
+	}
+}
+
+.registration {
+	background-color: #fff;
+	margin-top: 120px;
+	padding: 60px 0;
+
+	h3 {
+		color: $title;
+		font-size: 2rem;
+	}
+
+	p {
+		margin-top: 15px;
+	}
+
+	a {
+		background-color: $title;
+		border-radius: 20px;
+		color: #fff;
+		float: right;
+		margin-top: -28px;
+		padding: 5px 25px;
+		transition: background 0.2s ease;
+
+		&:hover {
+			background-color: $gray;
+		}
+
+		@media (max-width: 730px) {
+			display: inline-block;
+			float: none;
+			margin-top: 15px;
+		}
+	}
+
+	$bar-size: 7px;
+	.bar {
+		background-color: $gray;
+		border-radius: 20px;
+		display: inline-block;
+		height: $bar-size;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+
+		span {
+			background-color: $title;
+			float: left;
+			height: $bar-size;
 		}
 	}
 }
