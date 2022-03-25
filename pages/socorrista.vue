@@ -40,7 +40,7 @@ import { Component } from 'nuxt-property-decorator'
 import { Page } from '~/plugins/pages'
 
 @Component
-export default class userHome extends Page {
+export default class rescuerHome extends Page {
 	user = {
 		name: 'lorem ipsum dor sit',
 		birthDate: '05/05/1950',
