@@ -3,23 +3,17 @@
 		<div class="container">
 			<nav>
 				<ul>
-					<li>
-						<nuxt-link to="/usuario" title="Home">Home</nuxt-link>
-					</li>
-					<li>
-						<nuxt-link to="/usuario/dados" title="Cadastro">Cadastro</nuxt-link>
-					</li>
-					<li>
-						<nuxt-link to="/usuario/emergencia" title="Emergência">Emergência</nuxt-link>
+					<li v-for="item in value.menu" :key="item.text">
+						<nuxt-link :to="item.link" :title="item.text">{{ item.text }}</nuxt-link>
 					</li>
 				</ul>
 			</nav>
 
 			<div class="header-profile">
-				<img src="~/assets/img/avatar-user.png" alt="Hospital Moinhos de Vento" />
+				<img :src="require('~/assets/img/avatar-' + value.profile.type + '.png')" alt="Hospital Moinhos de Vento" />
 				<div>
-					<strong>Lucia Maria</strong>
-					<small>Paciente</small>
+					<strong>{{ value.profile.name }}</strong>
+					<small>{{ value.profile.role }}</small>
 				</div>
 			</div>
 		</div>
@@ -27,10 +21,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
 
 @Component
-export default class customHeader extends Vue {}
+export default class customHeader extends Vue {
+	@Prop() value!: any
+}
 </script>
 
 <style scoped lang="scss">
@@ -41,6 +37,8 @@ export default class customHeader extends Vue {}
 	box-shadow: 0 4px 16px rgba(2, 82, 140, 0.1);
 	height: 50px;
 	padding: 10px 0;
+	position: relative;
+	z-index: 20;
 
 	&-logo {
 		img {

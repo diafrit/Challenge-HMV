@@ -3,7 +3,7 @@
 		<section class="hero-banner">
 			<div class="container">
 				<div>
-					<h1>Ambulância <span>HMV</span> a caminho!</h1>
+					<h1>A <span>ajuda</span> está a caminho!</h1>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nobis enim magni laudantium libero deleniti
 						temporibus minus iste molestias. Quisquam?
@@ -17,10 +17,7 @@
 		<section class="registration">
 			<div class="container">
 				<h3><span>Agilize o atendimento</span> preenchendo algumas informações</h3>
-				<p>
-					Lorem ipsum dolor {{ percentage }}% sit amet consectetur adipisicing elit. Placeat, enim est vitae quisquam
-					illo.
-				</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, enim est vitae quisquam illo.</p>
 
 				<form>
 					<custom-field id="user.name" v-model="user.name" grid="9" label="Nome" />
@@ -124,7 +121,7 @@ export default class userEmergencia extends Page {
 
 .registration {
 	background-color: #fff;
-	margin-top: 120px;
+	margin-top: 30px;
 	padding: 60px 0;
 
 	h3 {

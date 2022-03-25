@@ -16,7 +16,7 @@
 
 		<section class="action">
 			<div>
-				<nuxt-link to="/" title="Solicitar atendimento">Chamada de emergência</nuxt-link>
+				<nuxt-link to="/usuario/emergencia" title="Solicitar atendimento">Chamada de emergência</nuxt-link>
 			</div>
 		</section>
 

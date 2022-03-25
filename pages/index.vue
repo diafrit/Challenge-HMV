@@ -7,7 +7,7 @@
 				<custom-field
 					id="profile"
 					v-model="active"
-					grid="12"
+					grid="6"
 					type="select"
 					:options="profile"
 					label="Selecione o perfil"

@@ -20,6 +20,7 @@
 			:name="id"
 			type="text"
 			:readonly="disabled"
+			:disabled="disabled"
 			:value="value"
 			@input="$emit('input', $event.target.value)"
 			@blur="$emit('blur', $event.target.value)"
@@ -52,7 +53,7 @@ export default class customField extends Vue {
 
 .field {
 	margin-bottom: 5px;
-	margin-top: 25px;
+	margin-top: 10px;
 	position: relative;
 	transition: all 0.3s ease;
 
@@ -63,20 +64,21 @@ export default class customField extends Vue {
 	input,
 	select {
 		background: none;
-		border-bottom: 1px $default solid;
+		border: 1px $gray solid;
+		border-radius: 3px;
 		box-sizing: border-box;
 		color: $default;
 		font: 400 16px/17px 'Montserrat';
-		padding: 12px;
+		padding: 15px 10px 9px;
 		position: relative;
 		transition: color 0.3s ease, padding 0.3s ease;
 		width: 100%;
 		z-index: 2;
 
 		+ label {
-			color: $title;
+			color: $gray;
 			left: 0;
-			padding: 11px 17px;
+			padding: 9px 15px;
 			position: absolute;
 			top: 0;
 			transition: all 0.3s ease;
@@ -87,8 +89,15 @@ export default class customField extends Vue {
 		&.input-filled {
 			+ label {
 				font-size: 12px;
-				top: -19px;
+				left: 16px;
+				padding: 0;
+				top: -3px;
 			}
+		}
+
+		&:disabled {
+			border-color: #ddd;
+			cursor: default;
 		}
 	}
 
