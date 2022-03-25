@@ -18,7 +18,7 @@ import { Component, Vue, Watch } from 'nuxt-property-decorator'
 @Component
 export default class customLayout extends Vue {
 	// User profile
-	usuario = {
+	paciente = {
 		profile: {
 			name: 'Lucia Maria',
 			role: 'Paciente',
@@ -27,15 +27,15 @@ export default class customLayout extends Vue {
 		menu: [
 			{
 				text: 'Home',
-				link: '/usuario',
+				link: '/paciente',
 			},
 			{
 				text: 'Cadastro',
-				link: '/usuario/dados',
+				link: '/paciente/dados',
 			},
 			{
 				text: 'Emergência',
-				link: '/usuario/emergencia',
+				link: '/paciente/emergencia',
 			},
 		],
 	}
@@ -80,7 +80,7 @@ export default class customLayout extends Vue {
 	// Update profile header on route change
 	@Watch('$nuxt.$route')
 	router() {
-		const route = this.$nuxt.$route.name ? this.$nuxt.$route.name.split('-')[0] : 'usuario'
+		const route = this.$nuxt.$route.name ? this.$nuxt.$route.name.split('-')[0] : 'paciente'
 		this.area = this[route]
 	}
 }

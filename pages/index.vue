@@ -27,7 +27,7 @@ import { Base } from '~/plugins/pages'
 @Component
 export default class login extends Base {
 	profile = [
-		{ value: 'usuario', text: 'Usuário' },
+		{ value: 'paciente', text: 'Paciente' },
 		{ value: 'socorrista', text: 'Socorrista' },
 		{ value: 'hospital', text: 'Hospital' },
 	]

@@ -16,14 +16,14 @@
 
 		<section class="action">
 			<div>
-				<nuxt-link to="/usuario/emergencia" title="Solicitar atendimento">Chamada de emergência</nuxt-link>
+				<nuxt-link to="/paciente/emergencia" title="Solicitar atendimento">Chamada de emergência</nuxt-link>
 			</div>
 		</section>
 
 		<section class="registration">
 			<div class="container">
 				<h3>Mantenha seus dados atualizados</h3>
-				<nuxt-link to="/usuario/dados" title="Atualizar dados">Atualizar</nuxt-link>
+				<nuxt-link to="/paciente/dados" title="Atualizar dados">Atualizar</nuxt-link>
 				<p>
 					Lorem ipsum dolor {{ percentage }}% sit amet consectetur adipisicing elit. Placeat, enim est vitae quisquam
 					illo.
