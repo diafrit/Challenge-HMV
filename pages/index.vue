@@ -7,7 +7,7 @@
 				<custom-field
 					id="profile"
 					v-model="active"
-					grid="6"
+					grid="7"
 					type="select"
 					:options="profile"
 					label="Selecione o perfil"
@@ -94,6 +94,7 @@ section {
 .login {
 	display: inline-block;
 	left: 50%;
+	min-width: 280px;
 	position: absolute;
 	top: 20%;
 	transform: translateX(-50%);
