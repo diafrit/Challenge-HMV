@@ -1,6 +1,10 @@
 <template>
 	<header class="header">
 		<div class="container">
+			<nuxt-link class="logo" to="/" title="Hospital Moinhos de Vento">
+				<img :src="require('~/assets/img/logo-hmv-small.png')" alt="Hospital Moinhos de Vento" />
+			</nuxt-link>
+
 			<nav>
 				<ul>
 					<li v-for="item in value.menu" :key="item.text">
@@ -40,7 +44,7 @@ export default class customHeader extends Vue {
 	position: relative;
 	z-index: 20;
 
-	&-logo {
+	.logo {
 		img {
 			height: 50px;
 		}
@@ -48,8 +52,9 @@ export default class customHeader extends Vue {
 
 	nav {
 		display: inline-block;
+		left: 25px;
 		position: relative;
-		top: 11px;
+		top: -18px;
 
 		ul {
 			li {
@@ -92,21 +97,9 @@ export default class customHeader extends Vue {
 	}
 
 	@media (max-width: 680px) {
-		height: auto;
-
-		&-logo {
-			img {
-				height: 30px;
-			}
-		}
-
 		nav {
-			top: -8px;
-
 			ul {
 				li {
-					margin-left: 7px;
-
 					a {
 						font-size: 0.8rem;
 					}
@@ -127,16 +120,41 @@ export default class customHeader extends Vue {
 				}
 			}
 
+			@media (max-width: 500px) {
+				div {
+					display: none;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 400px) {
+		height: 30px;
+
+		.logo {
+			img {
+				height: 30px;
+			}
+		}
+
+		nav {
+			left: 10px;
+			top: -10px;
+
+			ul {
+				li:not(:last-child) {
+					margin-right: 12px;
+				}
+			}
+		}
+
+		&-profile {
+			margin-top: 1px;
+
 			img {
 				border-width: 1px;
 				height: 24px;
 				padding: 1px;
-			}
-
-			@media (max-width: 460px) {
-				div {
-					display: none;
-				}
 			}
 		}
 	}
