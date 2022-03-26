@@ -14,7 +14,7 @@
 			</nav>
 
 			<div class="header-profile">
-				<img :src="require('~/assets/img/avatar-' + value.profile.type + '.png')" alt="Hospital Moinhos de Vento" />
+				<img :src="'/avatar/avatar-' + this.value.profile.type + '.png'" alt="Hospital Moinhos de Vento" />
 				<div>
 					<strong>{{ value.profile.name }}</strong>
 					<small>{{ value.profile.role }}</small>
