@@ -31,7 +31,7 @@ export default class customLayout extends Vue {
 			},
 			{
 				text: 'Cadastro',
-				link: '/paciente/dados',
+				link: '/paciente/cadastro',
 			},
 			{
 				text: 'Emergência',
@@ -81,7 +81,7 @@ export default class customLayout extends Vue {
 	@Watch('$nuxt.$route')
 	router() {
 		const route = this.$nuxt.$route.name ? this.$nuxt.$route.name.split('-')[0] : 'paciente'
-		this.area = this[route]
+		this.area = (this as any)[route]
 	}
 }
 </script>

@@ -2,7 +2,7 @@
 	<header class="header">
 		<div class="container">
 			<nuxt-link class="logo" to="/" title="Hospital Moinhos de Vento">
-				<img :src="require('~/assets/img/logo-hmv-small.png')" alt="Hospital Moinhos de Vento" />
+				<img src="~/assets/img/logo-hmv-small.png" alt="Hospital Moinhos de Vento" />
 			</nuxt-link>
 
 			<nav>

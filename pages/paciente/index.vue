@@ -23,7 +23,7 @@
 		<section class="registration">
 			<div class="container">
 				<h3>Mantenha seus dados atualizados</h3>
-				<nuxt-link to="/paciente/dados" title="Atualizar dados">Atualizar</nuxt-link>
+				<nuxt-link to="/paciente/cadastro" title="Atualizar dados">Atualizar</nuxt-link>
 				<p>
 					Lorem ipsum dolor {{ percentage }}% sit amet consectetur adipisicing elit. Placeat, enim est vitae quisquam
 					illo.
@@ -44,6 +44,15 @@ import { Page } from '~/plugins/pages'
 @Component
 export default class userHome extends Page {
 	percentage: number = 70
+
+	created() {
+		console.log('oi')
+		this.$axios.$get('/users').then((response) => {
+			console.log('ip', response)
+		})
+
+		// https://jsonplaceholder.typicode.com/todos/1
+	}
 }
 </script>
 
