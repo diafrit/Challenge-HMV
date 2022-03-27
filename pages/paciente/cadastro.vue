@@ -29,10 +29,15 @@
 
 <script lang="ts">
 import { Component } from 'nuxt-property-decorator'
-import { Page } from '~/plugins/pages'
+import { Page } from '@/plugins/pages'
+import customField from '@/components/customField.vue'
 
-@Component
-export default class userData extends Page {
+@Component({
+	components: {
+		customField,
+	},
+})
+export default class pacientData extends Page {
 	user = {
 		name: 'lorem ipsum dor sit',
 		birthDate: '05/05/1950',

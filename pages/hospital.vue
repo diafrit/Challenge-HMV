@@ -9,34 +9,16 @@
 				</p>
 
 				<ul>
-					<li>
+					<li v-for="(item, i) in list" :key="i">
 						<div>
-							<strong>Lucia Maria dos Santos</strong>
-							<p><strong>20/11/1950</strong> • Lorem ipsum dolor, 123 - amet color - SP • <strong>20:54h</strong></p>
+							<strong>{{ item.name }}</strong>
+							<p>
+								<strong>{{ item.birthDate }}</strong> • {{ item.address }} • <strong>{{ item.request }}</strong>
+							</p>
 						</div>
 						<div>
-							<button>Aceitar</button>
-							<button>Recusar</button>
-						</div>
-					</li>
-					<li>
-						<div>
-							<strong>Lucia Maria dos Santos</strong>
-							<p><strong>20/11/1950</strong> • Lorem ipsum dolor, 123 - amet color - SP • <strong>20:54h</strong></p>
-						</div>
-						<div>
-							<button>Aceitar</button>
-							<button>Recusar</button>
-						</div>
-					</li>
-					<li>
-						<div>
-							<strong>Lucia Maria dos Santos</strong>
-							<p><strong>20/11/1950</strong> • Lorem ipsum dolor, 123 - amet color - SP • <strong>20:54h</strong></p>
-						</div>
-						<div>
-							<button>Aceitar</button>
-							<button>Recusar</button>
+							<button class="bt-confirm">Aceitar</button>
+							<button class="bt-cancel">Recusar</button>
 						</div>
 					</li>
 				</ul>
@@ -47,10 +29,19 @@
 
 <script lang="ts">
 import { Component } from 'nuxt-property-decorator'
-import { Page } from '~/plugins/pages'
+import { Page } from '@/plugins/pages'
 
 @Component
-export default class hospitalHome extends Page {}
+export default class hospitalHome extends Page {
+	list = [
+		{
+			name: 'Lucia Maria dos Santos',
+			birthDate: '20/11/1950',
+			address: 'Lorem ipsum dolor, 123 - amet color - SP',
+			request: '20:54h',
+		},
+	]
+}
 </script>
 
 <style scoped lang="scss">

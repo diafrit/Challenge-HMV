@@ -37,9 +37,14 @@
 
 <script lang="ts">
 import { Component } from 'nuxt-property-decorator'
-import { Page } from '~/plugins/pages'
+import { Page } from '@/plugins/pages'
+import customField from '@/components/customField.vue'
 
-@Component
+@Component({
+	components: {
+		customField,
+	},
+})
 export default class rescuerHome extends Page {
 	user = {
 		name: 'lorem ipsum dor sit',

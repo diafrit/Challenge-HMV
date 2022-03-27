@@ -39,20 +39,11 @@
 
 <script lang="ts">
 import { Component } from 'nuxt-property-decorator'
-import { Page } from '~/plugins/pages'
+import { Page } from '@/plugins/pages'
 
 @Component
 export default class userHome extends Page {
 	percentage: number = 70
-
-	created() {
-		console.log('oi')
-		this.$axios.$get('/users').then((response) => {
-			console.log('ip', response)
-		})
-
-		// https://jsonplaceholder.typicode.com/todos/1
-	}
 }
 </script>
 

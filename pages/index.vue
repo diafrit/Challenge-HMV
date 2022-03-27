@@ -22,9 +22,14 @@
 
 <script lang="ts">
 import { Component } from 'nuxt-property-decorator'
-import { Base } from '~/plugins/pages'
+import { Base } from '@/plugins/pages'
+import customField from '@/components/customField.vue'
 
-@Component
+@Component({
+	components: {
+		customField,
+	},
+})
 export default class login extends Base {
 	profile = [
 		{ value: 'paciente', text: 'Paciente' },
