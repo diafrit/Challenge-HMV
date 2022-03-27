@@ -18,7 +18,7 @@ const id = Math.random().toString(36).slice(7)
 const wrapper = (p?: Props) => {
 	return shallowMount(customField, {
 		propsData: {
-			id: id,
+			id,
 			value: p && p.value ? p.value : '',
 			label: 'Label ' + id,
 			...p,
@@ -64,7 +64,7 @@ describe('Header', () => {
 			{ value: '2', text: 'Text two' },
 			{ value: '3', text: 'Text three' },
 		]
-		const el = e('select', { type: 'select', options: options })
+		const el = e('select', { type: 'select', options })
 
 		const items = el.findAll('option')
 		for (let i = 0; i < options.length; i++) {
@@ -74,6 +74,6 @@ describe('Header', () => {
 			expect(item.attributes('value')).toBe(options[i].value)
 		}
 
-		expect(e('select', { type: 'select', options: options, disabled: true }).attributes('disabled')).toBe('disabled')
+		expect(e('select', { type: 'select', options, disabled: true }).attributes('disabled')).toBe('disabled')
 	})
 })

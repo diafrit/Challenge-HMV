@@ -39,7 +39,7 @@ describe('Header', () => {
 
 		expect(item.length).toBe(3)
 		for (let i = 0; i < nav.menu.length; i++) {
-			expect(item.at(i).text()).toBe(nav.menu[i].text)
+			expect(item.at(i)!.text()).toBe(nav.menu[i].text)
 		}
 	})
 
