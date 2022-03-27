@@ -38,14 +38,6 @@ export default class login extends Base {
 	]
 
 	active = ''
-
-	created() {
-		console.log('oi')
-		this.$axios.$options('/users').then((response) => {
-			console.log('ip', response)
-		})
-		// https://jsonplaceholder.typicode.com/todos/1
-	}
 }
 </script>
 

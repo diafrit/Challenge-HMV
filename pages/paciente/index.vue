@@ -16,8 +16,10 @@
 
 		<section class="action">
 			<div>
-				<nuxt-link to="/paciente/emergencia" title="Solicitar atendimento">Chamada de emergência</nuxt-link>
+				<a href="#" title="Solicitar atendimento" @click.prevent="createEmergency">Chamada de emergência</a>
 			</div>
+
+			<p v-if="error">Ocorreu um erro na requisição, por favor tente novamente.</p>
 		</section>
 
 		<section class="registration">
@@ -44,6 +46,30 @@ import { Page } from '@/plugins/pages'
 @Component
 export default class userHome extends Page {
 	percentage: number = 70
+	error = false
+
+	createEmergency() {
+		this.error = false
+
+		this.$axios
+			.$post(
+				'/emergencies',
+				{},
+				{
+					auth: {
+						username: 'paciente@teste.com',
+						password: '1234abc@',
+					},
+				}
+			)
+			.then((response) => {
+				this.$store.commit('setEmergency', response._id)
+				this.$router.push({ path: '/paciente/emergencia' })
+			})
+			.catch(() => {
+				this.error = true
+			})
+	}
 }
 </script>
 
@@ -134,6 +160,13 @@ export default class userHome extends Page {
 				font-size: 1.5rem;
 			}
 		}
+	}
+
+	p {
+		color: $emergency;
+		font-size: 1.3rem;
+		margin-top: 30px;
+		text-align: center;
 	}
 
 	@keyframes pulse {

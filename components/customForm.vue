@@ -4,7 +4,7 @@
 			<custom-field
 				v-if="value[input].options && value[input].options.length"
 				:id="name + '.' + input"
-				:key="value[input].val + i"
+				:key="name + value[input].val + i"
 				v-model="value[input].val"
 				:grid="value[input].grid"
 				type="select"
@@ -15,7 +15,7 @@
 			<custom-field
 				v-else
 				:id="name + '.' + input"
-				:key="value[input].val + i"
+				:key="name + value[input].val + i"
 				v-model="value[input].val"
 				:grid="value[input].grid"
 				:label="value[input].title"

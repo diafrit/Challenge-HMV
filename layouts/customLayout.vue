@@ -19,6 +19,7 @@ import { Component, Vue, Watch } from 'nuxt-property-decorator'
 export default class customLayout extends Vue {
 	// User profile
 	paciente = {
+		user: 'af3ecfbc-0e18-4448-875a-d64744a1f5cd',
 		profile: {
 			name: 'Lucia Maria',
 			role: 'Paciente',
@@ -42,6 +43,7 @@ export default class customLayout extends Vue {
 
 	// Rescuer profile
 	socorrista = {
+		user: '16674382-3430-414e-b429-0e847999ca8e',
 		profile: {
 			name: 'João Silva',
 			role: 'Socorrista',
@@ -57,6 +59,7 @@ export default class customLayout extends Vue {
 
 	// Support profile
 	hospital = {
+		user: '6d763219-d191-4970-85cf-5abeab25f9c4',
 		profile: {
 			name: 'HMV',
 			role: 'Suporte',
@@ -82,6 +85,8 @@ export default class customLayout extends Vue {
 	router() {
 		const route = this.$nuxt.$route.name ? this.$nuxt.$route.name.split('-')[0] : 'paciente'
 		this.area = (this as any)[route]
+
+		this.$store.commit('setUser', this.area.user)
 	}
 }
 </script>

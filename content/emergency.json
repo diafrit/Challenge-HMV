@@ -1,13 +1,23 @@
 {
 	"headache": {
 		"title": "Está com dor de cabeça?",
-		"val": 0,
-		"grid": "12",
+		"val": false,
+		"grid": "6",
 		"options": [
-			{ "value": 0, "text": "Não" },
-			{ "value": 1, "text": "Fraca" },
-			{ "value": 2, "text": "Média" },
-			{ "value": 3, "text": "Intensa" }
+			{ "value": true, "text": "Sim" },
+			{ "value": false, "text": "Não" }
+		]
+	},
+	"headacheIntensity": {
+		"title": "Qual intensidade?",
+		"val": "",
+		"grid": "6",
+		"options": [
+			{ "value": "very-low", "text": "Muito fraca" },
+			{ "value": "low", "text": "Fraca" },
+			{ "value": "medium", "text": "Média" },
+			{ "value": "high", "text": "Intensa" },
+			{ "value": "very-high", "text": "Muito intensa" }
 		]
 	},
 	"breathe": {
@@ -21,28 +31,37 @@
 	},
 	"chestpain": {
 		"title": "Está com dor no peito?",
-		"val": true,
-		"grid": "12",
+		"val": false,
+		"grid": "6",
 		"options": [
 			{ "value": true, "text": "Sim" },
 			{ "value": false, "text": "Não" }
 		]
 	},
-	"chestpain-info": {
-		"title": "Está com dor no peito?",
-		"val": true,
-		"grid": "12",
-		"options": [{ "value": true, "text": "Com irridiação para braço esquerdo" }]
+	"chestpainInfo": {
+		"title": "Descreva dor no peito",
+		"val": "",
+		"grid": "6"
 	},
 	"abdominal": {
 		"title": "Está com dor abdominal?",
-		"val": 0,
-		"grid": "12",
+		"val": false,
+		"grid": "6",
 		"options": [
-			{ "value": 0, "text": "Não" },
-			{ "value": 1, "text": "Fraca" },
-			{ "value": 2, "text": "Média" },
-			{ "value": 3, "text": "Intensa" }
+			{ "value": true, "text": "Sim" },
+			{ "value": false, "text": "Não" }
+		]
+	},
+	"abdominalIntensity": {
+		"title": "Qual intensidade?",
+		"val": "",
+		"grid": "6",
+		"options": [
+			{ "value": "very-low", "text": "Muito fraca" },
+			{ "value": "low", "text": "Fraca" },
+			{ "value": "medium", "text": "Média" },
+			{ "value": "high", "text": "Intensa" },
+			{ "value": "very-high", "text": "Muito intensa" }
 		]
 	},
 	"backpain": {
@@ -57,16 +76,21 @@
 	"temperature": {
 		"title": "Temperatura corporal",
 		"val": "",
-		"grid": "4"
-	},
-	"bloodpressure": {
-		"title": "Pressão arterial",
-		"val": "",
-		"grid": "4"
+		"grid": "6"
 	},
 	"saturation": {
 		"title": "Saturação",
 		"val": "",
-		"grid": "4"
+		"grid": "6"
+	},
+	"bloodpressureSystolic": {
+		"title": "Pressão arterial",
+		"val": "",
+		"grid": "6"
+	},
+	"bloodpressureDiastolic": {
+		"title": "Pressão arterial",
+		"val": "",
+		"grid": "6"
 	}
 }

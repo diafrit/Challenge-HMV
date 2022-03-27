@@ -11,19 +11,24 @@
 				<ul>
 					<li v-for="(item, i) in list" :key="i">
 						<div>
-							<strong>{{ item.name }}</strong>
+							<strong>Lucia Maria</strong>
 							<p>
-								<strong>{{ item.birthDate }}</strong> • {{ item.address }} • <strong>{{ item.request }}</strong>
+								{{ item._id }} • <strong>{{ item.updated_at }}</strong>
 							</p>
 						</div>
 						<div>
-							<button class="bt-confirm">Aceitar</button>
-							<button class="bt-cancel">Recusar</button>
+							<button class="bt-confirm" @click.prevent="confirm(item._id)">Aceitar</button>
+							<button class="bt-cancel" @click.prevent="cancel(item._id)">Recusar</button>
 						</div>
 					</li>
 				</ul>
 			</div>
 		</section>
+
+		<p v-if="success.confirm || success.cancel" class="success">
+			<template v-if="success.confirm">Emergência aceita, enviaremos uma ambulância!</template>
+			<template v-else-if="success.cancel">Emergência recusada!</template>
+		</p>
 	</div>
 </template>
 
@@ -33,14 +38,92 @@ import { Page } from '@/plugins/pages'
 
 @Component
 export default class hospitalHome extends Page {
-	list = [
+	list = []
+	/*[
 		{
 			name: 'Lucia Maria dos Santos',
 			birthDate: '20/11/1950',
 			address: 'Lorem ipsum dolor, 123 - amet color - SP',
 			request: '20:54h',
 		},
-	]
+	]*/
+
+	error = false
+
+	success = {
+		confirm: false,
+		cancel: false,
+	}
+
+	auth = {
+		username: 'analista@hmv.com.br',
+		password: '1234abc@',
+	}
+
+	created() {
+		this.getList()
+	}
+
+	getList() {
+		this.error = false
+
+		this.$axios
+			.$get('/emergencies', {
+				auth: this.auth,
+			})
+			.then((response) => {
+				console.log(response)
+
+				this.list = response
+			})
+			.catch(() => {
+				this.error = true
+			})
+	}
+
+	confirm(id: string) {
+		this.$axios
+			.$patch(
+				'/emergencies/' + id + '/send-ambulance',
+				{},
+				{
+					auth: this.auth,
+				}
+			)
+			.then((response) => {
+				this.success.confirm = true
+				this.getList()
+
+				setTimeout(() => {
+					this.success.confirm = false
+				}, 5000)
+			})
+			.catch(() => {
+				this.error = true
+			})
+	}
+
+	cancel(id: string) {
+		this.$axios
+			.$patch(
+				'/emergencies/' + id + '/cancel',
+				{},
+				{
+					auth: this.auth,
+				}
+			)
+			.then((response) => {
+				this.success.cancel = true
+				this.getList()
+
+				setTimeout(() => {
+					this.success.cancel = false
+				}, 5000)
+			})
+			.catch(() => {
+				this.error = true
+			})
+	}
 }
 </script>
 
@@ -121,5 +204,14 @@ section {
 			}
 		}
 	}
+}
+.success {
+	background-color: #fff;
+	bottom: 0;
+	font-size: 1.3rem;
+	padding: 30px;
+	position: fixed;
+	text-align: center;
+	width: calc(100% - 60px);
 }
 </style>

@@ -20,7 +20,10 @@
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, enim est vitae quisquam illo.</p>
 
 				<custom-form v-model="emergency" name="emergency" />
-				<button>Salvar</button>
+
+				<p v-if="success" class="msg">Cadastro atualizado com sucesso</p>
+				<p v-else-if="error" class="msg error">Ocorreu um erro na sua requisição, por favor tente novamente</p>
+				<button v-else @click.prevent="updateEmergency">Salvar</button>
 			</div>
 		</section>
 	</div>
@@ -43,6 +46,58 @@ const emergencyData = require('@/content/emergency.json')
 export default class userEmergencia extends Page {
 	user = userData
 	emergency = emergencyData
+
+	success = false
+	error = false
+
+	updateEmergency() {
+		this.$axios
+			.$put(
+				'/emergencies/' + this.$store.state.emergencyID + '/form',
+				{
+					headache: {
+						has: !!this.emergency.headache.val,
+						intensity: this.emergency.headacheIntensity.val,
+					},
+					breathing_difficulties: {
+						has: !!this.emergency.breathe.val,
+					},
+					chest_pain: {
+						has: !!this.emergency.chestpain.val,
+						characteristics: this.emergency.chestpainInfo.val,
+					},
+					abdominal_pain: {
+						has: !!this.emergency.abdominal.val,
+						intensity: this.emergency.abdominalIntensity.val,
+					},
+					backache: {
+						has: !!this.emergency.backpain.val,
+					},
+					body_temperature: {
+						celsius_degrees: parseFloat(this.emergency.temperature.val),
+					},
+					blood_pressure: {
+						systolic: parseFloat(this.emergency.bloodpressureSystolic.val),
+						diastolic: parseFloat(this.emergency.bloodpressureDiastolic.val),
+					},
+					oxygen_saturation: {
+						value: parseFloat(this.emergency.saturation.val),
+					},
+				},
+				{
+					auth: {
+						username: 'paciente@teste.com',
+						password: '1234abc@',
+					},
+				}
+			)
+			.then((response) => {
+				this.success = true
+			})
+			.catch(() => {
+				this.error = true
+			})
+	}
 }
 </script>
 
@@ -165,6 +220,15 @@ export default class userEmergencia extends Page {
 			display: inline-block;
 			float: none;
 			margin-top: 15px;
+		}
+	}
+
+	.msg {
+		font-size: 1.3rem;
+		text-align: center;
+
+		&.error {
+			color: $emergency;
 		}
 	}
 }
