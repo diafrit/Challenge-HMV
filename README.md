@@ -1,6 +1,6 @@
 # Adotappet
 
-<img src="assetsimg/logo-hmv2.png" alt="Hospital Moinhos de Vento">
+<img src="assets/img/logo-hmv2.png" alt="Hospital Moinhos de Vento">
 
 > Projeto com o intuito de facilitar e aprimorar o fluxo de emergência entre pacientes, socorrista e o Hospital Moinhos de Vento.
 
