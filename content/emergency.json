@@ -1,0 +1,72 @@
+{
+	"headache": {
+		"title": "Está com dor de cabeça?",
+		"val": 0,
+		"grid": "12",
+		"options": [
+			{ "value": 0, "text": "Não" },
+			{ "value": 1, "text": "Fraca" },
+			{ "value": 2, "text": "Média" },
+			{ "value": 3, "text": "Intensa" }
+		]
+	},
+	"breathe": {
+		"title": "Está com dificuldade para respirar?",
+		"val": false,
+		"grid": "12",
+		"options": [
+			{ "value": true, "text": "Sim" },
+			{ "value": false, "text": "Não" }
+		]
+	},
+	"chestpain": {
+		"title": "Está com dor no peito?",
+		"val": true,
+		"grid": "12",
+		"options": [
+			{ "value": true, "text": "Sim" },
+			{ "value": false, "text": "Não" }
+		]
+	},
+	"chestpain-info": {
+		"title": "Está com dor no peito?",
+		"val": true,
+		"grid": "12",
+		"options": [{ "value": true, "text": "Com irridiação para braço esquerdo" }]
+	},
+	"abdominal": {
+		"title": "Está com dor abdominal?",
+		"val": 0,
+		"grid": "12",
+		"options": [
+			{ "value": 0, "text": "Não" },
+			{ "value": 1, "text": "Fraca" },
+			{ "value": 2, "text": "Média" },
+			{ "value": 3, "text": "Intensa" }
+		]
+	},
+	"backpain": {
+		"title": "Está com dor nas costas?",
+		"val": true,
+		"grid": "12",
+		"options": [
+			{ "value": true, "text": "Sim" },
+			{ "value": false, "text": "Não" }
+		]
+	},
+	"temperature": {
+		"title": "Temperatura corporal",
+		"val": "",
+		"grid": "4"
+	},
+	"bloodpressure": {
+		"title": "Pressão arterial",
+		"val": "",
+		"grid": "4"
+	},
+	"saturation": {
+		"title": "Saturação",
+		"val": "",
+		"grid": "4"
+	}
+}

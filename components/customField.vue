@@ -3,7 +3,7 @@
 		<select
 			v-if="type == 'select'"
 			:ref="id"
-			:class="{ 'input-filled': value }"
+			:class="{ 'input-filled': value !== '' }"
 			:name="id"
 			:disabled="disabled"
 			:value="value"

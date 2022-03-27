@@ -10,15 +10,7 @@
 					sit magni, libero!
 				</p>
 
-				<form>
-					<custom-field id="user.name" v-model="user.name" grid="9" label="Nome" />
-					<custom-field id="user.birthDate" v-model="user.birthDate" grid="3" label="Nascimento" />
-					<custom-field id="user.address" v-model="user.address" grid="10" label="Logradouro" />
-					<custom-field id="user.number" v-model="user.number" grid="2" label="Número" />
-					<custom-field id="user.city" v-model="user.city" grid="8" label="Cidade" />
-					<custom-field id="user.state" v-model="user.state" grid="4" label="Estado" />
-				</form>
-
+				<custom-form v-model="user" name="user" />
 				<img src="~/assets/img/data-illustration.png" alt="Hospital Moinhos de Vento" />
 
 				<button>Atualizar</button>
@@ -31,21 +23,17 @@
 import { Component } from 'nuxt-property-decorator'
 import { Page } from '@/plugins/pages'
 import customField from '@/components/customField.vue'
+import customForm from '@/components/customForm.vue'
+const userData = require('@/content/user.json')
 
 @Component({
 	components: {
 		customField,
+		customForm,
 	},
 })
 export default class pacientData extends Page {
-	user = {
-		name: 'lorem ipsum dor sit',
-		birthDate: '05/05/1950',
-		address: 'Rua possimus quas ullam',
-		number: '123',
-		city: 'Repellendus',
-		state: 'Iste quod',
-	}
+	user = userData
 }
 </script>
 

@@ -1,0 +1,102 @@
+{
+	"name": {
+		"title": "Nome",
+		"val": "Lucia Maria",
+		"grid": "9"
+	},
+	"birthDate": {
+		"title": "Nome",
+		"val": "05/05/1950",
+		"grid": "3"
+	},
+	"address": {
+		"title": "Endereço",
+		"val": "Rua possimus quas ullam",
+		"grid": "10"
+	},
+	"number": {
+		"title": "Número",
+		"val": "123",
+		"grid": "2"
+	},
+	"city": {
+		"title": "Cidade",
+		"val": "Repellendus",
+		"grid": "10"
+	},
+	"state": {
+		"title": "Estado",
+		"val": "SP",
+		"grid": "2"
+	},
+	"allergy": {
+		"title": "Possui alergia a algum medicamento?",
+		"val": false,
+		"grid": "6",
+		"options": [
+			{ "value": true, "text": "Sim" },
+			{ "value": false, "text": "Não" }
+		]
+	},
+	"allergy-info": {
+		"title": "Quais:",
+		"val": "",
+		"grid": "6"
+	},
+	"medicine": {
+		"title": "Toma algum medicamento de uso contínuo?",
+		"val": false,
+		"grid": "6",
+		"options": [
+			{ "value": true, "text": "Sim" },
+			{ "value": false, "text": "Não" }
+		]
+	},
+	"medicine-info": {
+		"title": "Quais:",
+		"val": "",
+		"grid": "6"
+	},
+	"illness": {
+		"title": "Possui alguma doença diagnosticada?",
+		"val": false,
+		"grid": "6",
+		"options": [
+			{ "value": true, "text": "Sim" },
+			{ "value": false, "text": "Não" }
+		]
+	},
+	"illness-info": {
+		"title": "Quais:",
+		"val": "",
+		"grid": "6"
+	},
+	"heartdisease": {
+		"title": "Possui histórico de doença cardíaca?",
+		"val": false,
+		"grid": "6",
+		"options": [
+			{ "value": true, "text": "Sim" },
+			{ "value": false, "text": "Não" }
+		]
+	},
+	"heartdisease-info": {
+		"title": "Quais:",
+		"val": "",
+		"grid": "6"
+	},
+	"smoker": {
+		"title": "É fumante?",
+		"val": false,
+		"grid": "6",
+		"options": [
+			{ "value": true, "text": "Sim" },
+			{ "value": false, "text": "Não" }
+		]
+	},
+	"smoker-info": {
+		"title": "Quais:",
+		"val": "",
+		"grid": "6"
+	}
+}
