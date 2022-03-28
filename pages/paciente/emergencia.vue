@@ -91,7 +91,7 @@ export default class userEmergencia extends Page {
 					},
 				}
 			)
-			.then((response) => {
+			.then(() => {
 				this.success = true
 			})
 			.catch(() => {

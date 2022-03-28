@@ -39,14 +39,6 @@ import { Page } from '@/plugins/pages'
 @Component
 export default class hospitalHome extends Page {
 	list = []
-	/*[
-		{
-			name: 'Lucia Maria dos Santos',
-			birthDate: '20/11/1950',
-			address: 'Lorem ipsum dolor, 123 - amet color - SP',
-			request: '20:54h',
-		},
-	]*/
 
 	error = false
 
@@ -71,9 +63,7 @@ export default class hospitalHome extends Page {
 			.$get('/emergencies', {
 				auth: this.auth,
 			})
-			.then((response) => {
-				console.log(response)
-
+			.then((response: any) => {
 				this.list = response
 			})
 			.catch(() => {
@@ -90,7 +80,7 @@ export default class hospitalHome extends Page {
 					auth: this.auth,
 				}
 			)
-			.then((response) => {
+			.then(() => {
 				this.success.confirm = true
 				this.getList()
 
@@ -112,7 +102,7 @@ export default class hospitalHome extends Page {
 					auth: this.auth,
 				}
 			)
-			.then((response) => {
+			.then(() => {
 				this.success.cancel = true
 				this.getList()
 

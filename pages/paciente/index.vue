@@ -62,7 +62,7 @@ export default class userHome extends Page {
 					},
 				}
 			)
-			.then((response) => {
+			.then((response: any) => {
 				this.$store.commit('setEmergency', response._id)
 				this.$router.push({ path: '/paciente/emergencia' })
 			})
